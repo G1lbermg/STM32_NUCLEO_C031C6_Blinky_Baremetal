@@ -1,10 +1,10 @@
-#include "ledBSP.h"
+#include <led_BSP.h>
 
-uint8_t initLED(GPIO_TypeDef *port, uint8_t pinNum)
+ErrorCode_t  initLED(GPIO_TypeDef *port, uint8_t pinNum)
 {
 	//Check if the pin is valid
 	if((pinNum < 0U) || (pinNum > 15U))
-		return 0;
+		return E_GPIO_INVALID_PIN;
 
 	/****************************Clock Setup*****************************/
 	//Check if clock port has already been enabled, if not then enable it
@@ -24,7 +24,7 @@ uint8_t initLED(GPIO_TypeDef *port, uint8_t pinNum)
 	else if(port == GPIOF) {
 		RCC->IOPENR |= RCC_IOPENR_GPIOFEN;
 	} else{
-		return 0U;//not a valid port
+		return E_GPIO_INVALID_PORT;//not a valid port
 	}
 
 		/****************************Pin Setup*****************************/
@@ -43,14 +43,14 @@ uint8_t initLED(GPIO_TypeDef *port, uint8_t pinNum)
 	//Set pin to no pull up pull down
 	port->PUPDR &= ~((1 << (pinNum * 2)) | (1 << (pinNum * 2 + 1)));
 
-	return 1;
+	return E_OK;
 }
 
-uint8_t turnOnLED(GPIO_TypeDef *port, uint8_t pinNum)
+ErrorCode_t  turnOnLED(GPIO_TypeDef *port, uint8_t pinNum)
 {
 	//Check if the pin is valid
 	if((pinNum < 0U) || (pinNum > 15U))
-		return 0;
+		return E_GPIO_INVALID_PIN;
 
 	//Also check that the port is a valid one
 	if(port == GPIOA
@@ -61,17 +61,17 @@ uint8_t turnOnLED(GPIO_TypeDef *port, uint8_t pinNum)
 
 		port->BSRR = (1<<pinNum);
 
-		return 1U;
+		return E_OK;
 	} else{
-		return 0U;//not a valid port
+		return E_GPIO_INVALID_PORT;//not a valid port
 	}
 }
 
-uint8_t turnOffLED(GPIO_TypeDef *port, uint8_t pinNum)
+ErrorCode_t turnOffLED(GPIO_TypeDef *port, uint8_t pinNum)
 {
 	//Check if the pin is valid
 	if((pinNum < 0U) || (pinNum > 15U))
-		return 0;
+		return E_GPIO_INVALID_PIN;
 
 	//Also check that the port is a valid one
 	if(port == GPIOA
@@ -82,9 +82,9 @@ uint8_t turnOffLED(GPIO_TypeDef *port, uint8_t pinNum)
 
 		port->BSRR = (1<<(pinNum + 16));
 
-		return 1U;
+		return E_OK;
 	} else{
-		return 0U;//not a valid port
+		return E_GPIO_INVALID_PORT;//not a valid port
 	}
 }
 

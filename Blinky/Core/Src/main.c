@@ -17,8 +17,8 @@
   */
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
+#include <led_BSP.h>
 #include "main.h"
-#include "ledBSP.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -102,7 +102,7 @@ int main(void)
 
   /* USER CODE BEGIN SysInit */
 
-	//__enable_irq();
+	__enable_irq();
 
   /* USER CODE END SysInit */
 
