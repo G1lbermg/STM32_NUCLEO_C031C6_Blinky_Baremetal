@@ -110,7 +110,7 @@ int main(void)
   /* Initialize all configured peripherals */
   /* USER CODE BEGIN 2 */
 
-  CHECK(init_LED(GPIOA, 17));
+  check_Error((init_LED(GPIOA, 16)), __FILE__, __LINE__);
 
   /* USER CODE END 2 */
 
