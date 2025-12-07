@@ -1,26 +1,18 @@
 #ifndef ERROR_CHECK_UTILITIES_H
 #define ERROR_CHECK_UTILITIES_H
 
-#define CRITICAL_ERROR 0U
-#define SUCCESSFUL 1U
-#define NON_CRITICAL_ERROR 2U
+#include "error_codes.h"
 
-#define ERROR_CHECK(func_call) 					\
-    do {                                        \
-        if ((func_call) == CRITICAL_ERROR) {    \
-            return 0;                  			\
-        } else if ((func_call) == SUCCESSFUL){  \
-            ;                                   \
-        } else if ((func_call) == NON_CRITICAL_ERROR){ \
-            ;                                   \
-        }                                       \
+void Central_Error_Handler(ErrorCode_t errorCode, const char *file, int line);
+
+#define CHECK(func_call) 					                    \
+   do {                                                         \
+        ErrorCode_t result = (func_call);                       \
+        if (result != E_OK) {                                   \
+            Central_Error_Handler(result, __FILE__, __LINE__);  \
+            return result; /* PROPAGATE ERROR UP */             \
+        }                                                       \
     } while (0)
 
+
 #endif
-
-
-//look into having bitwise error flagging and/or status register
-
-/*
- * https://betterembsw.blogspot.com/2016/03/multiple-returns-and-error-checking.html
- * */

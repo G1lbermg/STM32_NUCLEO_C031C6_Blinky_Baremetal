@@ -5,9 +5,9 @@
 #include <stdint.h>
 #include "error_codes.h"
 
-ErrorCode_t initLED(GPIO_TypeDef *port, uint8_t pinNum);
+ErrorCode_t init_LED(GPIO_TypeDef *port, uint8_t pinNum);
 
-ErrorCode_t turnOnLED(GPIO_TypeDef *port, uint8_t pinNum);
-ErrorCode_t turnOffLED(GPIO_TypeDef *port, uint8_t pinNum);
+ErrorCode_t turn_On_LED(GPIO_TypeDef *port, uint8_t pinNum);
+ErrorCode_t turn_Off_LED(GPIO_TypeDef *port, uint8_t pinNum);
 
 #endif

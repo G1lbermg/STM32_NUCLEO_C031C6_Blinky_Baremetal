@@ -1,9 +1,9 @@
 #include <led_BSP.h>
 
-ErrorCode_t  initLED(GPIO_TypeDef *port, uint8_t pinNum)
+ErrorCode_t  init_LED(GPIO_TypeDef *port, uint8_t pinNum)
 {
 	//Check if the pin is valid
-	if((pinNum < 0U) || (pinNum > 15U))
+	if(pinNum > 15U)
 		return E_GPIO_INVALID_PIN;
 
 	/****************************Clock Setup*****************************/
@@ -46,7 +46,7 @@ ErrorCode_t  initLED(GPIO_TypeDef *port, uint8_t pinNum)
 	return E_OK;
 }
 
-ErrorCode_t  turnOnLED(GPIO_TypeDef *port, uint8_t pinNum)
+ErrorCode_t  turn_On_LED(GPIO_TypeDef *port, uint8_t pinNum)
 {
 	//Check if the pin is valid
 	if((pinNum < 0U) || (pinNum > 15U))
@@ -67,7 +67,7 @@ ErrorCode_t  turnOnLED(GPIO_TypeDef *port, uint8_t pinNum)
 	}
 }
 
-ErrorCode_t turnOffLED(GPIO_TypeDef *port, uint8_t pinNum)
+ErrorCode_t turn_Off_LED(GPIO_TypeDef *port, uint8_t pinNum)
 {
 	//Check if the pin is valid
 	if((pinNum < 0U) || (pinNum > 15U))

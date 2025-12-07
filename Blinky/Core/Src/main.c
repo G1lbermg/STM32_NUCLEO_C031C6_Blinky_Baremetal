@@ -22,6 +22,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include "error_check_utilities.h"
 
 /* USER CODE END Includes */
 
@@ -109,7 +110,7 @@ int main(void)
   /* Initialize all configured peripherals */
   /* USER CODE BEGIN 2 */
 
-  initLED(GPIOA, PIN_7);
+  CHECK(init_LED(GPIOA, 17));
 
   /* USER CODE END 2 */
 
@@ -121,9 +122,9 @@ int main(void)
 
     /* USER CODE BEGIN 3 */
 
-	turnOnLED(GPIOA, PIN_7);
+	turn_On_LED(GPIOA, PIN_5);
 	LL_mDelay(200);
-	turnOffLED(GPIOA, PIN_7);
+	turn_Off_LED(GPIOA, PIN_5);
 	LL_mDelay(200);
 
   }
@@ -174,10 +175,7 @@ void Error_Handler(void)
 {
   /* USER CODE BEGIN Error_Handler_Debug */
   /* User can add his own implementation to report the HAL error return state */
-  __disable_irq();
-  while (1)
-  {
-  }
+	Central_Error_Handler(E_ERROR_GENERIC, __FILE__, __LINE__);
   /* USER CODE END Error_Handler_Debug */
 }
 #ifdef USE_FULL_ASSERT
