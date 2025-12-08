@@ -5,9 +5,14 @@
 #include <stdint.h>
 #include "error_codes.h"
 
-ErrorCode_t init_LED(GPIO_TypeDef *port, uint8_t pinNum);
+typedef struct {
+    GPIO_TypeDef *port;
+    uint32_t setMask;     // BSRR mask to turn on
+    uint32_t resetMask;   // BSRR mask to turn off
+} LED_t;
 
-ErrorCode_t turn_On_LED(GPIO_TypeDef *port, uint8_t pinNum);
-ErrorCode_t turn_Off_LED(GPIO_TypeDef *port, uint8_t pinNum);
+ErrorCode_t init_LED(LED_t *led,GPIO_TypeDef *port, uint8_t pinNum);
+void turn_On_LED(LED_t *led);
+void turn_Off_LED(LED_t *led);
 
 #endif

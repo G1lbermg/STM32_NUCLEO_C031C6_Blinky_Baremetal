@@ -110,7 +110,8 @@ int main(void)
   /* Initialize all configured peripherals */
   /* USER CODE BEGIN 2 */
 
-  check_Error((init_LED(GPIOA, 16)), __FILE__, __LINE__);
+  LED_t LED1;
+  check_Error((init_LED(&LED1,GPIOA, 5)), __FILE__, __LINE__);
 
   /* USER CODE END 2 */
 
@@ -122,10 +123,10 @@ int main(void)
 
     /* USER CODE BEGIN 3 */
 
-	turn_On_LED(GPIOA, PIN_5);
-	LL_mDelay(200);
-	turn_Off_LED(GPIOA, PIN_5);
-	LL_mDelay(200);
+	turn_On_LED(&LED1);
+	LL_mDelay(1000);
+	turn_Off_LED(&LED1);
+	LL_mDelay(1000);
 
   }
   /* USER CODE END 3 */
