@@ -7,7 +7,7 @@ Minimal C implementation for LED blink on STM32C031C6. Uses CubeMX and low level
    * **Board:** NUCLEO-C031C6
    * **MCU:** STM32C031C6 (ARM Cortex-M0+)
    * **Debugger:** ST-LINK V2-1 (SWD interface)
-   ***Onboard LED:** Configured to PA5 (User LED 4)
+   * **Onboard LED:** Configured to PA5 (User LED 4)
 
 ### 2. Software Setup
 
