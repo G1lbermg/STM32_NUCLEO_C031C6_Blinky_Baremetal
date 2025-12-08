@@ -17,7 +17,7 @@ Minimal C implementation for LED blink on STM32C031C6. Uses CubeMX and low level
   * **Libraries & Header Files:** 
     * STM32 LL libraries
     * CMSIS STM32C0xx
-    * CMSIS STM32C031xx memory mapping
+    * CMSIS STM32C031xx (memory map)
 
 ### 3. How to Run
    1. **Import:** "Blinky" sub folder as STM32CubeIde project
