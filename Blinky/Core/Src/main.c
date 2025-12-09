@@ -123,9 +123,9 @@ int main(void)
     /* USER CODE BEGIN 3 */
 
 	turn_On_LED(&LED1);
-	LL_mDelay(750);
+	LL_mDelay(1000);
 	turn_Off_LED(&LED1);
-	LL_mDelay(750);
+	LL_mDelay(1000);
 
   }
   /* USER CODE END 3 */
