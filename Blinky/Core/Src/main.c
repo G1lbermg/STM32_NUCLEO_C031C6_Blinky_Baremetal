@@ -123,9 +123,9 @@ int main(void)
     /* USER CODE BEGIN 3 */
 
 	turn_On_LED(&LED1);
-	LL_mDelay(500);
+	LL_mDelay(1000);
 	turn_Off_LED(&LED1);
-	LL_mDelay(500);
+	LL_mDelay(1000);
 
   }
   /* USER CODE END 3 */
@@ -194,5 +194,6 @@ void assert_failed(uint8_t *file, uint32_t line)
   /* USER CODE END 6 */
 }
 #endif /* USE_FULL_ASSERT */
+
 
 
