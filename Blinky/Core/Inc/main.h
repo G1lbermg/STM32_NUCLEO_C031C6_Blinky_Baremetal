@@ -90,6 +90,23 @@ void Error_Handler(void);
 
 /* USER CODE BEGIN Private defines */
 
+#define PIN_0 0x0U
+#define PIN_1 0x1U
+#define PIN_2 0x2U
+#define PIN_3 0x3U
+#define PIN_4 0x4U
+#define PIN_5 0x5U
+#define PIN_6 0x6U
+#define PIN_7 0x7U
+#define PIN_8 0x8U
+#define PIN_9 0x9U
+#define PIN_10 0xAU
+#define PIN_11 0xBU
+#define PIN_12 0xCU
+#define PIN_13 0xDU
+#define PIN_14 0xEU
+#define PIN_15 0xFU
+
 /* USER CODE END Private defines */
 
 #ifdef __cplusplus
