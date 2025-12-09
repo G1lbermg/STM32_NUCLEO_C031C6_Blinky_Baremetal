@@ -38,6 +38,7 @@
 
 /* Private macro -------------------------------------------------------------*/
 /* USER CODE BEGIN PM */
+
 #define PIN_0 0x0U
 #define PIN_1 0x1U
 #define PIN_2 0x2U
