@@ -55,7 +55,6 @@
 #define PIN_13 0xDU
 #define PIN_14 0xEU
 #define PIN_15 0xFU
-
 /* USER CODE END PM */
 
 /* Private variables ---------------------------------------------------------*/
@@ -196,4 +195,5 @@ void assert_failed(uint8_t *file, uint32_t line)
   /* USER CODE END 6 */
 }
 #endif /* USE_FULL_ASSERT */
+
 
