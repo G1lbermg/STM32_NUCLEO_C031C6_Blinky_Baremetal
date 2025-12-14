@@ -8,8 +8,16 @@ void Central_Error_Handler(ErrorCode_t errorCode, const char *file, int line)
 	//This way we can reference them and figure out what caused the program to halt
 
     // --- Enter Safe State and Halt ---
-    __disable_irq();
 
+	//Double check file pointer
+	const char *log_file_ptr;
+	if(file == 0)
+		log_file_ptr = "UNKNOWN FILE";
+	else
+		log_file_ptr = file;
+
+
+    __disable_irq();
     while (1)
     {
 
