@@ -1,7 +1,7 @@
 # Blinky
 ## STM32 NUCLEO-C031C6 Bare Metal Implementation
 
-Minimal C implementation for LED blink on STM32C031C6. Uses CubeMX and low level drivers for SWD/debug, clock initialization, and to generate a delay using SysTick. All GPIO configuration and toggling is done via direct memory-mapped register access. Project also includes a basic error handler.
+Bare-metal C implementation for LED blink on STM32C031C6. Uses CubeMX and low level drivers for SWD/debug, clock initialization, and to generate a delay using SysTick. All GPIO configuration and toggling is done via direct memory-mapped register access. Project also includes a basic error handler.
 
 ### 1. Hardware Setup
 
