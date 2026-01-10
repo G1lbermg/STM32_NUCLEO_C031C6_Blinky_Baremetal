@@ -13,7 +13,8 @@ Bare-metal C implementation for LED blink on STM32C031C6. Uses CubeMX and low le
 | **Toolchain** | GNU Tools for STM32 (13.3.rel1) |
 | **Libraries** | STM32 LL, CMSIS STM32C0xx, CMSIS STM32C031xx |
 
-<img width="1020" height="901" alt="Nucleo Blinky" src="https://github.com/user-attachments/assets/e06ce10b-bd66-4226-8efa-2aaea134b943" />
+<img width="820" height="701" alt="Nucleo Blinky" src="https://github.com/user-attachments/assets/ea27fe97-89f1-4aca-86e8-41562b8a013d" />
+
 
 
 ### 🚀 How to Run
